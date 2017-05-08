@@ -1,15 +1,8 @@
 *.iml
-<<<<<<< HEAD
-.gradle
-/local.properties
-/.idea/workspace.xml
-/.idea/libraries
-=======
 *.apk
 .gradle
 /local.properties
 /.idea
->>>>>>> 72837c559edbbd4ec6c6b58bc9cd4924806ae4cd
 .DS_Store
 /build
 /captures
