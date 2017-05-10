@@ -3,13 +3,9 @@ package com.anastasiyayuragina.timer
 import android.os.Handler
 import java.util.*
 
+open class Stopwatch : TimerInterface {
 
-data class Time(val hours: Int, val minutes: Int, val seconds: Int)
-
-
-open class Timer : TimerInterface {
-
-    override val isActive: Boolean = false
+    override var isActive: Boolean = false
     override var timeBehind: Long = 0
     override var onTick: ((time: Long) -> (Boolean))? = null
 
@@ -43,8 +39,7 @@ open class Timer : TimerInterface {
     }
 }
 
-
-class  Countdown: Timer() {
+class  Timer: Stopwatch() {
     private var limit: Long = 0
     var onFinish: ( () -> Unit)? = null
 
@@ -61,6 +56,5 @@ class  Countdown: Timer() {
             onFinish?.invoke()
         }
     }
-
 }
 
