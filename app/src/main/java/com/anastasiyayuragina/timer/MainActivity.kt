@@ -1,5 +1,6 @@
 package com.anastasiyayuragina.timer
 
+import android.media.RingtoneManager
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -31,9 +32,12 @@ class MainActivity : AppCompatActivity() {
             textTimer.text = "00:00:00"
             startTime = 0
             playStopButton.setBackgroundResource(R.mipmap.ic_play)
+
+            val notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
+            val ringtone = RingtoneManager.getRingtone(this, notification)
+                ringtone.play()
 //            stopwatch.start()
         }
-//        timer.startWith(10000)
 
         playStopButton.setOnClickListener {
             if (!timer.isActive && startTime > 0L) {
