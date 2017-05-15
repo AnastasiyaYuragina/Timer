@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         }
         timer.onFinish = { ->
             Log.d("111", "finish")
-            textTimer.text = "00:00:00"
+            textTimer.text = getString(R.string.zero_time)
             startTime = 0
             playStopButton.setBackgroundResource(R.mipmap.ic_play)
 
@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
                 timer.stop()
                 startTime = 0
                 playStopButton.setBackgroundResource(R.mipmap.ic_play)
-                textTimer.text = "00:00:00"
+                textTimer.text = getString(R.string.zero_time)
             }
         }
 
