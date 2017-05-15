@@ -30,8 +30,10 @@ class MainActivity : AppCompatActivity() {
         timer.onFinish = { ->
             Log.d("111", "finish")
             textTimer.text = getString(R.string.zero_time)
-            startTime = 0
+            timer.isActive = false
             playStopButton.setBackgroundResource(R.mipmap.ic_play)
+            textTimer.text = String.format("%02d:%02d:%02d", startTime.toTime().hours,
+                    startTime.toTime().minutes, startTime.toTime().seconds)
 
             val notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
             val ringtone = RingtoneManager.getRingtone(this, notification)
